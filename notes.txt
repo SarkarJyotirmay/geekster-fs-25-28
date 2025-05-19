@@ -1,0 +1,28 @@
+17-05-2025
+To run the js file in nodejs env i.e on backend run command
+node <filename>
+non blocking IO
+
+npm i axios
+npm i package-name
+
+Modules : Library/Package (Utility)
+1. Built In  : Part of nodejs
+2. Third party : npmjs.com
+
+Import/Export
+ESM => import React from "react"; export default Header;
+CJS => const React = require("react"); module.exports = Header;
+
+Built In
+1. fs => File System CRUD
+--------------------------------------------------------------------------------------------
+19-05-2025
+
+Processes
+1. Parent : OS process
+2. Child : Application process
+
+
+How to create a nodejs project
+npm init -> Answer basic questions in the cli
