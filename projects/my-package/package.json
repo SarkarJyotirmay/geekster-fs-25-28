@@ -1,6 +1,6 @@
 {
-  "name": "myfirstpackage",
-  "version": "1.0.0",
+  "name": "divyansh_first_package",
+  "version": "1.0.1",
   "description": "My first nodejs project",
   "main": "index.js",
   "scripts": {

@@ -26,3 +26,21 @@ Processes
 
 How to create a nodejs project
 npm init -> Answer basic questions in the cli
+
+--------------------------------------------------------------------------------------------
+20-05-2025
+
+Steps to publish a package on npmjs.com
+1. Create an account/login on npmjs.com
+2. Create a project from scratch in your system (npm init)
+3. npm login -> In CLI
+4. npm publish
+
+HTTP Status Code
+1xx => Informational
+2xx => Success (200, 201, 204)
+3xx => Redirectional
+4xx => Client Error (400 => ,401 => ,403 => Forbidden (Insufficent Permission/Not allowed ),404 => Not found, 429 => Too many requests)
+5xx => Server Error (500, 501, 502, 503)
+
+Web Scrapping => Bot
