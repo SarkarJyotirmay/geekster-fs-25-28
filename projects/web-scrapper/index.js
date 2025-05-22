@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "node:fs";
+import xlsx from "xlsx";
 
 /**
  * Scrape amazon.in listing screen and extract information - product title, price & rating 
@@ -53,8 +54,15 @@ try {
 
     await browser.close();
 
-    fs.writeFileSync("products.json", JSON.stringify(products))
-    console.log("Working fine");
+    // fs.writeFileSync("products.json", JSON.stringify(products));
+
+    const workbook = xlsx.utils.book_new(); // create new excel file object
+    const sheet = xlsx.utils.json_to_sheet(products); // excel sheet
+
+    xlsx.utils.book_append_sheet(workbook, sheet, "Amazon Products");
+    xlsx.writeFile(workbook, "Products-amazon.xlsx");
+
+    console.log("Products saved successfully in Excel file");
 } catch (err) {
     console.log(err);
 }

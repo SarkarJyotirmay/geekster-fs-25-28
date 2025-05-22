@@ -44,3 +44,16 @@ HTTP Status Code
 5xx => Server Error (500, 501, 502, 503)
 
 Web Scrapping => Bot
+
+
+--------------------------------------------------------------------------------------------
+22-05-2025
+
+Excel file -> xlsx file
+Excel sheet
+Rows & Cols
+
+
+Pre requisit for API
+1. End Point -> URL (http://jsonplaceholder.com/api/todos/list)
+2. HTTP Method -> GET, POST, PUT, PATCH, DELETE etc
