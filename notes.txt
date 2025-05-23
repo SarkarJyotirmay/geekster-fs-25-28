@@ -57,3 +57,21 @@ Rows & Cols
 Pre requisit for API
 1. End Point -> URL (http://jsonplaceholder.com/api/todos/list)
 2. HTTP Method -> GET, POST, PUT, PATCH, DELETE etc
+
+--------------------------------------------------------------------------------------------
+23-05-2025
+
+GET => When server is sending data to client on their request (Fetching)
+POST => When client is sending data to the server (Create)
+
+API 1 = /todos GET => Fetch the list of all todos
+API 2 = /todos POST => Creating a new todo
+
+npm i -g nodemon -> Hot reloading for nodejs
+
+API => Connector
+
+Web API
+REST API => JSON [{id: 1, name: "abcd", image: "http://abcd.com/xyz.jpg"}]
+SOAP API => XML <> </>
+etc

@@ -27,12 +27,15 @@ const serverFn = (req, res) => {
     console.log(req.url);
     console.log("Request received");
 
-
     if (req.url == "/todos") {
         res.writeHead(200, {
             "Content-Type": "application/json"
         })
-        res.end(JSON.stringify(dummyTodosData));
+        if (req.method == "GET") {
+            res.end(JSON.stringify(dummyTodosData));
+        } else if (req.method == "POST") {
+            res.end(JSON.stringify({ message: "Dummy Post Todo API " }))
+        }
     } else if (req.url == "/users") {
         res.writeHead(200, {
             "Content-Type": "application/json"
@@ -46,9 +49,8 @@ const serverFn = (req, res) => {
             result: []
         }))
     }
-
 };
 
 const server = http.createServer(serverFn);
 
-server.listen(5173, () => console.log("Server is up and running at port 8080"));
+server.listen(8080, () => console.log("Server is up and running at port 8080"));
