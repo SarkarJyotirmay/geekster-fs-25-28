@@ -75,3 +75,16 @@ Web API
 REST API => JSON [{id: 1, name: "abcd", image: "http://abcd.com/xyz.jpg"}]
 SOAP API => XML <> </>
 etc
+
+--------------------------------------------------------------------------------------------
+26-05-2025
+
+Middlewares
+Level of application
+    1. Application level middleware
+    2. Router-level middleware
+    
+Type of handling / PREDEFINED / functionality
+    3. Error handling middleware
+    4. Built in middleware
+    5. Third Party middleware

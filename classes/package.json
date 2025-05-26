@@ -6,7 +6,7 @@
     "express": "^5.1.0"
   },
   "scripts": {
-    "dev": "nodemon 23-05-2025/server2.js",
+    "dev": "nodemon 26-05-2025/middlewares.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
