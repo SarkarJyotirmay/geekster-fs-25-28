@@ -88,3 +88,13 @@ Type of handling / PREDEFINED / functionality
     3. Error handling middleware
     4. Built in middleware
     5. Third Party middleware
+
+--------------------------------------------------------------------------------------------
+27-05-2025
+
+Path
+1 Absolute path : D:\Divyansh\Classes\fs-25-28\module_6\classes\27-05-2025\img\sample.png
+2 Relative path : /27-05-2025/img/sample.png
+
+<form method="POST" action="/register">
+</form>

@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "response-time": "^2.3.3"
   },
   "scripts": {
-    "dev": "nodemon 26-05-2025/middlewares.js",
+    "dev": "nodemon 27-05-2025/middlewares2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
