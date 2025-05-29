@@ -98,3 +98,15 @@ Path
 
 <form method="POST" action="/register">
 </form>
+
+--------------------------------------------------------------------------------------------
+29-05-2025
+Database - MongoDB
+
+
+CRUD 
+C -> Create
+db.users.insertOne({...})
+db.users.insertMany([{},{}])
+
+R -> Read
