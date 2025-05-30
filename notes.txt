@@ -109,4 +109,197 @@ C -> Create
 db.users.insertOne({...})
 db.users.insertMany([{},{}])
 
+
+
+--------------------------------------------------------------------------------------------
+30-05-2025
+
 R -> Read
+
+MQL
+
+Relational / Comparision Operators
+
+>   $gt
+>=  $gte
+<   $lt
+<=  $lte
+==  $eq
+!=  $ne
+
+Q. Find all the products in the database collection named "products"
+db.<collection-name>.find()
+db.products.find()
+
+Q. Find all the products whose price is 27.259995759875096
+db.products.find({
+    price: 27.259995759875096
+})
+
+Q. Find all the products whose price is 743.3653019224372
+db.products.find({
+    price: 743.3653019224372
+})
+
+Q. Find all the products whose price is less than 100
+db.products.find({
+    price: {
+        $lt: 100
+    }
+}).count()
+
+Q. Find all the products whose price is less than 20
+db.products.find({
+    price: {
+        $lt: 20
+    }
+})
+
+Q. Find all the products whose price is 600 or more
+db.products.find({
+    price: {
+        $gte: 600
+    }
+})
+
+Q. Find all the product which has price other than 299
+db.products.find({
+    price: {
+        $ne: 299
+    }
+})
+
+Q. Find all the product which has price 873.7449146903808
+db.products.find({
+    price: {
+        $eq: 873.7449146903808
+    }
+})
+
+db.products.find({
+    price: 873.7449146903808
+})
+
+Logical Operators
+
+&&  $and
+||  $or
+
+
+Q. Find all the products having price in the range of 10 and 30
+db.products.find({
+    $and: [
+        {
+            price: {
+                $gt: 10
+            }
+        },
+        {
+            price: {
+                $lt: 30
+            }
+        }
+    ]
+})
+
+
+Q. Find all the product who has price less than 10 or greater than 800
+db.products.find({
+    $or: [
+        {
+            price: {
+                $lt: 10
+            }
+        },
+        {
+            price: {
+                $gt: 800
+            }
+        }
+    ]
+}).sort({price: 1, rating: -1})
+
+Q. Find all the product whose name is Soft Bamboo Salad
+
+db.products.find({
+    name: "Soft Bamboo Salad"
+})
+
+RegExp()
+/^a{0,10}$/
+g => Global (Search in whole string)
+i => Case insensitive (Capital & Small letters will be ignored)
+
+Q. Find all the products having "salad" in their name
+db.products.find({
+    name: /salad/gi
+})
+
+Q. Find all the product whose name is salad and price is between 10 and 900
+db.products.find({
+    $and: [
+        {
+            name: /salad/gi
+        },
+        {
+            price: {
+                $gt: 10
+            }
+        },
+        {
+            price: {
+                $lt: 50
+            }
+        }
+    ]
+})
+
+db.products.find({
+    $and: [
+        {
+            name: /salad/gi
+        },
+        {
+            $or: [
+                {},
+                {}
+            ]
+        }
+     ]
+})
+
+db.products.find({
+    name: /salad/gi,
+    price: {
+        $gt: 10,
+        $lt: 50
+    }
+})
+
+find() => Find all matching items
+findOne() => Finds first matching item
+
+U -> Update
+Q. Update the price of the product with name "salad" in it to 100
+
+db.<collection-name>.updateOne(findObject, updateObject)
+db.<collection-name>.updateMany(findObject, updateObject)
+
+db.products.updateMany(
+    {
+        name: /salad/gi
+    },
+    {
+        $set : {
+            price: 100
+        }
+    }
+)
+
+
+db.products.delteOne(findObject)
+db.products.delteMany(findObject)
+
+db.products.deleteMany({
+    price: 100
+})
