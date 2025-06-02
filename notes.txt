@@ -303,3 +303,56 @@ db.products.delteMany(findObject)
 db.products.deleteMany({
     price: 100
 })
+
+--------------------------------------------------------------------------------------------
+02-06-2025
+
+Social Netowrk Project
+
+Feed module
+User module
+Settings module
+
+Job Application
+
+User module
+Job module => CRUD Operation on Job
+Admin module
+Settings module
+
+// /api/API_VERSION/MODULE_NAME/API_NAME
+// /api/v1/job/create
+
+{
+    title: "Software Engg - Full stack",
+    location: "Indore",
+    minExp: 4,
+    salary: 1500000,
+    description: "Develop full stack web apps in javascript technologies",
+    company: "IBM",
+    skills: ["react", "node"]
+}
+
+{
+    title: {
+        type: String
+    },
+    location: {
+        type: String
+    },
+    minExp: {
+        type: Number
+    },
+    salary: {
+        type: Number
+    },
+    description: {
+        type: String
+    },
+    company: {
+       type: String
+    },
+    skills: {
+        type: [String]
+    }
+}
