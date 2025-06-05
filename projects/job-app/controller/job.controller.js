@@ -36,14 +36,33 @@ const listJob = async (req, res) => {
     });
 };
 
-const editJob = (req, res) => {
+const editJob = async (req, res) => {
+    console.log(req.body);
+    // await JobModel.updateOne({
+    //     _id: req.body._id
+    // }, {
+    //     $set: {
+    //         ...req.body
+    //     }
+    // });
+    const fields = { ...req.body };
+    delete fields._id;
+
+    await JobModel.findByIdAndUpdate(req.body._id, { ...fields });
     res.json({
         success: true,
         messgage: "Edit job api"
     })
 };
 
-const deleteJob = (req, res) => {
+const deleteJob = async (req, res) => {
+    // if(req.body._id == undefined) {
+
+    // }
+    // await JobModel.deleteOne({ _id: req.body._id });
+    // await JobModel.deleteMany({ _id: req.body._id });
+
+    await JobModel.findByIdAndDelete(req.body._id);
     res.json({
         success: true,
         message: "Delete job api"

@@ -361,3 +361,11 @@ Settings module
 05-06-2025
 
 Environment Variables
+Email
+
+Job Application => Account Verification, User Registration (Welcome Mail), Apply (Application Mail) etc
+http server => Handling internet traffic (req/res) https://
+db server => Manages db related activities mongodb://
+smtp server => Used to send emails (Simple Mail Transfer Protocol) 
+host => localhost 
+port => 1234

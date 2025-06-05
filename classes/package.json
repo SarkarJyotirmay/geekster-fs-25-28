@@ -4,10 +4,11 @@
   "main": "index.js",
   "dependencies": {
     "express": "^5.1.0",
+    "nodemailer": "^7.0.3",
     "response-time": "^2.3.3"
   },
   "scripts": {
-    "dev": "nodemon 27-05-2025/middlewares2.js",
+    "dev": "nodemon 05-06-2025/email.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
