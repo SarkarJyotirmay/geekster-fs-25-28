@@ -369,3 +369,31 @@ db server => Manages db related activities mongodb://
 smtp server => Used to send emails (Simple Mail Transfer Protocol) 
 host => localhost 
 port => 1234
+
+--------------------------------------------------------------------------------------------
+06-06-2025
+File Sharing App (Google Drive / One Drive / Dropbox etc)
+File Upload
+Share a file link
+Download / access the file
+Learnings : File Upload, Docker
+Revisit : Project Structure
+
+Modules
+1. File Module 
+2. User module (Login/signup)
+
+
+
+const onFormSubmit = e => {
+	e.prevnetDefault();
+const formData = new FormData();
+
+formData.append("username",userNameInput)
+formData.append("resume", inputFieldRef.current.target.files[0]);
+
+
+axios.post("/upload", {
+	body: formData
+});
+}
