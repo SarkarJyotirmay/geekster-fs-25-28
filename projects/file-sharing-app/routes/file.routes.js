@@ -5,10 +5,10 @@ const uploader = require("../middlewares/fileUpload");
 
 const router = express.Router();
 
-router.post("/api/v1/file/upload", uploader.single("resume"), fileController.uploadFile);
+router.post("/api/v1/file/upload", uploader.single("file"), fileController.uploadFile);
 
 router.post("/api/v1/file/share", fileController.shareFile);
 
-// router.get(); // To be decided later
+router.get("/files/:fileId", fileController.downloadFile); // To be decided later
 
 module.exports = router;

@@ -397,3 +397,27 @@ axios.post("/upload", {
 	body: formData
 });
 }
+
+--------------------------------------------------------------------------------------------
+09-06-2025
+
+/files/68431411479f1ae43a54945c
+/files/alksdjflaksdf0asdfa0sdfs
+/files/f80a8s9dfasd0f90as9dd9dx
+
+<a target="_blank" href="DOWNLOADBLE LINK"> Click here</a>
+
+
+const mailer = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: "587",
+    secure: true,
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.USER_PASS
+    }
+});
+
+
+docker build -t file_sharing_app:1.0 .
+docker run -p 8080:8080 -d file_sharing_app:1.0
