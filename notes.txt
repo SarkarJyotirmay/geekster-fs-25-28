@@ -421,3 +421,91 @@ const mailer = nodemailer.createTransport({
 
 docker build -t file_sharing_app:1.0 .
 docker run -p 8080:8080 -d file_sharing_app:1.0
+
+--------------------------------------------------------------------------------------------
+10-06-2025
+
+eCommerce - My Strore
+
+SDLC (Software Dev Lifecycle)
+1. Requirement Gathering
+2. Check the feasibility
+
+**UX Engg**
+1. Prototype / Wireframes
+2. UX Designs / Mockups (Adobe XD, Figma etc)
+3. Design Review
+4. Design update & finalization
+
+**Development Team**
+1. Backend Development
+2. Frontend Development
+
+**QA/Tester**
+1. Testing Phase / QA (Quality Assurance)
+
+**Product Owner** 
+UAT (User Acceptance Testing) - Alpha
+
+**User Testing Phase** - Beta Testing
+Feedback
+
+PRODUCTION MODE - LIVE
+
+eCommerce - My Store
+
+1. User Facing WebSite/App
+    Frontend
+    Backend
+
+2. Seller Facing WebSite/App
+    Frontend
+    Backend
+
+3. Admin Portal
+    Frontend
+    Backend
+
+4. Customer Service Portal
+    Frontend
+    Backend
+
+Scope of work - Seller + Seller (Partially)
+Modules : 
+1. User Module (Difficult)
+    Register
+    Login
+    Forgot Password
+    Reset Password
+
+2. Product Module (Easy)
+    CRUD
+
+3. Cart Module / Wishlist Module (Moderate)
+    Add to Cart
+    Remve from cart etc
+
+4. Checkout Module / Order Module (Moderate + Very Lengthy)
+    Place order - Product info, Address Info, Payment gateway
+    Order Information - Status of your order
+
+5. Profile module (Very Easy)
+    My Orders
+
+6. Review Product (Moderate / Difficult - Small module)
+    Add review to a product
+    Edit reviews to a product etc
+
+Learnings
+    Security
+        1. Authetication : JWT
+        2. Authorization
+    Payment Gateway Integration (Subject to account availability)
+    DB Operations
+        1. Connecting different collections
+        2. Querying different collections at once
+    Postman collection
+    Rate limiting
+    Encryption/Hashing etc
+
+index.js -> route -> controller -> model
