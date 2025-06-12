@@ -509,3 +509,19 @@ Learnings
     Encryption/Hashing etc
 
 index.js -> route -> controller -> model
+
+--------------------------------------------------------------------------------------------
+12-06-2025
+
+Password security
+
+abcd1234 => &*Fs9df8asdf6%&sdf8asdfasdfsdf
+
+Encoding / Decoding => Converting a plain text into equivalent encoded form so that all the systems can understand it (NOT RELATED WITH SECURITY)
+Encryption / Decryption => Conversion of plain text into equivalent cipher text using std algorithms like AES, DES, RSA etc - IT IS REVERSIBLE
+Hashing => Conversion of plain text into equivalent cipher text using std algorithms - IT IS NOT REVERSIBLE
+
+With login / protected routes
+    View my order
+    Place order
+    Viewing the product

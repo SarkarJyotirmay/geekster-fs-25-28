@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
 
 const userSchema = mongoose.Schema({
     firstName: {
@@ -51,6 +53,17 @@ const userSchema = mongoose.Schema({
     }
 }, {
     timestamps: true
+});
+
+// DB Pre save hook
+userSchema.pre("save", async function () {
+    // req.body / The parameter passed to create() method = this
+    // Convert pass into hash
+    // Generate salt => To increase the complexity of the hash
+    const salt = await bcrypt.genSalt(10);
+    // console.log("SALT", salt); // Random sequence of alphnumeric chars
+    const passwordHash = await bcrypt.hash(this.password, salt);
+    this.password = passwordHash;
 });
 
 const UserModel = mongoose.model("users", userSchema);
