@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 
+const authMiddleware = require("./middlewares/auth");
 const userRoutes = require("./routes/user.route");
 const productRoutes = require("./routes/product.route");
 
@@ -25,6 +26,7 @@ mongoose
 
 // Modular routes
 app.use("/api/v1/user", userRoutes);
+app.use(authMiddleware); // DO NOT MOVE THE MIDDLEWARE
 app.use("/api/v1/product", productRoutes);
 
 const portNo = process.env.PORT_NO || 8080;

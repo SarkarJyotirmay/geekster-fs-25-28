@@ -521,7 +521,21 @@ Encoding / Decoding => Converting a plain text into equivalent encoded form so t
 Encryption / Decryption => Conversion of plain text into equivalent cipher text using std algorithms like AES, DES, RSA etc - IT IS REVERSIBLE
 Hashing => Conversion of plain text into equivalent cipher text using std algorithms - IT IS NOT REVERSIBLE
 
+Unprotected
+    Login
+    Regiter
+    
 With login / protected routes
     View my order
     Place order
     Viewing the product
+
+
+--------------------------------------------------------------------------------------------
+13-06-2025
+Protecting the APIs
+JWT = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+
+{
+    exp: 17865654
+}
