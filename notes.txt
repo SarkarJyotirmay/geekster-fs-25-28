@@ -539,3 +539,49 @@ JWT = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I
 {
     exp: 17865654
 }
+
+--------------------------------------------------------------------------------------------
+16-06-2025
+
+Product list API filters
+1. by name (name contains)
+2. min and max price
+3. brand
+4. min rating
+5. discount range
+6. category
+
+Pagination
+30000 products
+Page => Chunk of data (eg 10 items)
+
+Formula to skip no of items = (pageNo - 1) * pageSize
+
+(2 - 1) * 5
+1 * 5
+5 => items to skip
+
+(1 - 1) * 5
+0 * 5
+0 => items to skip
+
+(4 - 1) * 5
+3 * 5
+15 => items to skip
+
+Page size = 5
+
+Page No 1 => 1-5 == 0 items to skip, next 5 to show
+Page No 2 => 6-10, 5 items to skip, next 5 to show
+Page No 3 => 11-15, 10 items to skip, next 5 to show
+Page No 4 => 16-20, 15 items to skip, next 5 to show
+....
+
+
+Page Size = 10
+
+Page No 1 => 1-10
+Page No 2 => 11-20
+Page No 3 => 21-30
+....
+
