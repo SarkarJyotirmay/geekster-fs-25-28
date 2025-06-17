@@ -50,6 +50,11 @@ const userSchema = mongoose.Schema({
             type: String,
             requried: true
         },
+    },
+    jwt: {
+        type: String,
+        required: false,
+        default: ""
     }
 }, {
     timestamps: true

@@ -41,11 +41,17 @@ const login = async (req, res) => {
 
     const jwtData = {
         id: user._id,
-        email: user.email
+        email: user.email,
     };
 
     const token = jwt.sign(jwtData, process.env.JWT_SECRET_KEY, {
         expiresIn: "1h"
+    });
+
+    await UserModel.findByIdAndUpdate(user._id, {
+        $set: {
+            jwt: token
+        }
     });
 
     // res.cookie("jwt", token); // To set jwt in browser cookie

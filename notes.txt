@@ -585,3 +585,17 @@ Page No 2 => 11-20
 Page No 3 => 21-30
 ....
 
+--------------------------------------------------------------------------------------------
+17-06-2025
+axios -> To call apis
+axios interceptor -> 
+
+Token1 => eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGFlMjU1YjY2NmQzMjk3ZTY1ODVmNCIsImVtYWlsIjoiZGl2eWFuc2hAZ21haWwuY29tIiwiaWF0IjoxNzUwMTY4MTEzLCJleHAiOjE3NTAxNzE3MTN9.tnZKhGOw8H_XEgcRXmhJ0mP1LcTr5SQJLJNhRwBPjhA
+Token2 => eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGFlMjU1YjY2NmQzMjk3ZTY1ODVmNCIsImVtYWlsIjoiZGl2eWFuc2hAZ21haWwuY29tIiwiaWF0IjoxNzUwMTY4MTgxLCJleHAiOjE3NTAxNzE3ODF9.YSbB4uo-dn8VPQy7_jSAEtZ4P4cOL8muojVWuSPLNBw
+
+Redux persistor => Saves the data in local storage
+ user : {
+    firstName,
+}
+
+Cart Module
