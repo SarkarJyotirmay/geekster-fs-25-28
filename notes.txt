@@ -599,3 +599,29 @@ Redux persistor => Saves the data in local storage
 }
 
 Cart Module
+
+--------------------------------------------------------------------------------------------
+19-06-2025
+
+push => $push
+pop/slice/etc => $pull
+
+const cart = new Cart({...})
+await cart.save();
+
+SOLID Principles
+S => Single Responsibility Principle
+O => Open close Principle
+L => Liskov Substituion Principle
+I => Interface Segregation Principle
+D => Dependency Inversion Principle
+
+Baren Export => Multi controller/ API import export
+
+Roles of User
+
+1. Customer / Buyer
+2. Seller
+3. Admin
+
+Role based access

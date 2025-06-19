@@ -8,7 +8,10 @@ dotenv.config();
 
 const register = async (req, res) => {
     // Todo:  Write validation for req body
-    await UserModel.create(req.body);
+    await UserModel.create({
+        ...req.body,
+        role: "CUSTOMER"
+    });
     res.json({
         succes: true,
         message: "Dummy resgister API"
