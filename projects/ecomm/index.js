@@ -8,6 +8,7 @@ const userRoutes = require("./routes/user.route");
 const productRoutes = require("./routes/product.route");
 const cartRoutes = require("./routes/cart.route");
 const couponRoutes = require("./routes/coupon.route");
+const orderRoutes = require("./routes/order.route");
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use(authMiddleware); // DO NOT MOVE THE MIDDLEWARE
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/cart", cartRoutes);
 app.use("/api/v1/coupon", couponRoutes);
+app.use("/api/v1/order", orderRoutes);
 
 const portNo = process.env.PORT_NO || 8080;
 

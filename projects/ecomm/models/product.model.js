@@ -45,11 +45,15 @@ const productSchema = mongoose.Schema({
     },
     images: {
         type: [String]
-    }
+    },
+    // userId: {
+    //     type: mongoose.Types.ObjectId, // _id of seller
+    //     ref: "users"
+    // }
 },
-{
-    timestamps: true
-}
+    {
+        timestamps: true
+    }
 );
 
 const ProductModel = mongoose.model("products", productSchema);

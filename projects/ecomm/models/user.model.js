@@ -61,12 +61,12 @@ const userSchema = mongoose.Schema({
         required: true,
         enum: ["CUSTOMER", "SELLER", "ADMIN"]
     },
-    gender: {
-        type: String,
-        required: true,
-        default: "O",
-        enum: ["M", "F", "O"]
-    }
+    // gender: {
+    //     type: String,
+    //     required: true,
+    //     default: "O",
+    //     enum: ["M", "F", "O"]
+    // }
 }, {
     timestamps: true
 });

@@ -625,3 +625,10 @@ Roles of User
 3. Admin
 
 Role based access
+--------------------------------------------------------------------------------------------
+20-06-2025
+
+RBAC (Role based access control)
+Coupon
+
+Place order
