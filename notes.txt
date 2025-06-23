@@ -632,3 +632,22 @@ RBAC (Role based access control)
 Coupon
 
 Place order
+
+--------------------------------------------------------------------------------------------
+23-06-2025
+Cart value => 324
+Coupon discount => 20% => 64.8
+Max discount => 30
+Final discount applied : 30
+
+
+db.products.find({
+    _id: {
+        $in: []
+    }
+})
+db["products"].find({
+_id: {
+$in: [ObjectId("6850228754bd943d03c1a99d"), ObjectId("6850228754bd943d03c1a99c")]
+}
+})

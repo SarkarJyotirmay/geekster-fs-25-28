@@ -1,5 +1,12 @@
+const dayjs = require("dayjs");
+const isBetween = require("dayjs/plugin/isBetween")
+
 const CartModel = require("../models/cart.model");
 const CouponModel = require("../models/coupon.model");
+const ProductModel = require("../models/product.model");
+const OrderModel = require("../models/order.model");
+
+dayjs.extend(isBetween);
 
 const createOrder = async (req, res) => {
     /**
@@ -52,9 +59,10 @@ const createOrder = async (req, res) => {
     }
 
     const total = userCart.products.reduce((acc, cv) => acc + (cv.productId.price * cv.qty), 0);
-
+    console.log(total);
     // Coupon calculations
 
+    let finalDiscount = 0;
     if (req.body.coupon) {
         const coupon = await CouponModel.findOne({ code: req.body.coupon });
         if (!coupon) {
@@ -72,12 +80,68 @@ const createOrder = async (req, res) => {
          *  2. Coupon start and end date
          *  3. Calculate max discount
          */
+
+        if (total < coupon.minOrderValue) {
+            return res
+                .status(400)
+                .json({
+                    success: false,
+                    message: `Min order value for this coupon is ${coupon.minOrderValue}`
+                })
+        }
+
+        const startDate = dayjs(coupon.startDate);
+        const endDate = dayjs(coupon.endDate);
+        const currentDate = dayjs();
+
+        const isCouponDateInBetween = currentDate.isBetween(startDate, endDate);
+        if (!isCouponDateInBetween) {
+            return res
+                .status(400)
+                .json({
+                    success: false,
+                    message: "Coupon is expired or to be used in future"
+                });
+        }
+        const discount = (total * coupon.discountPercentage) / 100;
+        const maxDiscount = coupon.maxDiscountValue;
+        finalDiscount = Math.min(discount, maxDiscount);
+        console.log(finalDiscount);
     }
+
+    const grandTotal = total - finalDiscount;
+
+    // Reduce the qty of the items purchased
+    for (let product of userCart.products) {
+        console.log(product.productId._id, product.qty);
+        await ProductModel.findByIdAndUpdate(product.productId._id, {
+            $inc: {
+                stock: -product.qty
+            }
+        })
+    }
+
+    // Payment modes
+    if (req.body.paymentMode === "ONLINE") {
+        // Redirect the user to payment gateway and return the response
+    }
+
+    // Store order data in db
+    await OrderModel.create({
+        products: userCart.products,
+        coupon: req.body.coupon,
+        user: req.user._id,
+        modeOfPayment: req.body.paymentMode,
+        orderTotal: grandTotal,
+        orderStatus: req.body.paymentMode === "ONLINE" ? "PAYMENT_PENDING" : "IN_TRANSIT",
+        deliveryAddress: req.user.address
+    });
+
+    await CartModel.deleteOne({_id: userCart._id});
 
     res.json({
         success: true,
-        message: "Place order API",
-        data: userCart
+        message: "Order placed successfully",
     });
 };
 
