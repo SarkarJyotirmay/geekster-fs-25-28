@@ -4,7 +4,8 @@ const {
     register,
     login,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    changePassword
 } = require("../controllers/user.controller");
 
 const router = express.Router();
@@ -12,6 +13,8 @@ const router = express.Router();
 router.post("/register", register);
 
 router.post("/login", login);
+
+router.post("/change-password", changePassword);
 
 router.post("/forgot-password", forgotPassword);
 

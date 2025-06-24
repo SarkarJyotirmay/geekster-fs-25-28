@@ -61,6 +61,16 @@ const userSchema = mongoose.Schema({
         required: true,
         enum: ["CUSTOMER", "SELLER", "ADMIN"]
     },
+    passwordOtp: {
+        type: String,
+        required: false,
+        default: ""
+    },
+    otpExpiresAt: {
+        type: Date,
+        required: false,
+        default: new Date()
+    }
     // gender: {
     //     type: String,
     //     required: true,

@@ -651,3 +651,55 @@ _id: {
 $in: [ObjectId("6850228754bd943d03c1a99d"), ObjectId("6850228754bd943d03c1a99c")]
 }
 })
+
+--------------------------------------------------------------------------------------------
+24-06-2025
+enum: List of allowed values
+
+TS : TypeScript : Superset of JS => JS + Restrictions
+
+Interface
+Types
+Enums
+Generic types
+
+
+Payment Gateway?
+
+MyStore
+1. Cash collected and somebody will transfer it to company account
+2. I share compnay's account details with the customer 
+
+
+MyStore <=> PAYMENT GATEWAY (0.5%, 1%) <=> Customer (100+1) => 
+
+RBI (Reserve Bank Of India)
+Tokenization => 
+
+MyStore => SBI
+
+Mode of online payments
+1. CC
+2. DC
+3. NB
+4. UPI
+5. Wallets
+6. Paylater
+etc
+
+PGs
+1. Razorpay
+2. PayTM
+3. Billdesk
+4. Juspay
+5. Paypal
+6. Stripe
+7. Worldpay
+etc
+
+
+Change password => 1 step process
+Forgot password => 2 step process
+
+1. Enter email and receive OTP (/forgot-password)
+2. Validate OTP and change password (otp, newpassword) => /reset-password

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Screen</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+    <button id="payBtn">Pay Now</button>
+    <script>
+        const payBtn = document.getElementById("payBtn");
+        payBtn.addEventListener("click", () => {
+            console.log("Pay btn clicked");
+            const razorpay = new Razorpay({
+                key: "PUT YOUR OWN KEY",
+                amount: 59900, // actual value to be collected from backend 
+                curency: "INR",
+                order_id: "order_Ql45snolnY4ZOe", // actual value to be collected from backend
+                name: "My eComm Store - Geekster",
+                description: "My first eComm store payment gateway integration",
+                image: "https://www.geekster.in/Logo.svg",
+                theme: {
+                    color: "green",
+                },
+                handler: (response) => {
+                    // Callback
+                    console.log(response);
+                    alert("Payment received successfully")
+                }
+            });
+
+            razorpay.open(); // Open payment gateway popup
+        });
+    </script>
+</body>
+
+</html>

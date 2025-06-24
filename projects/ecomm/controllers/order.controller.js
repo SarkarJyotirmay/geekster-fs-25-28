@@ -30,7 +30,7 @@ const createOrder = async (req, res) => {
      */
 
     const userCart = await CartModel
-        .findOne({ userId: req.user._id }, { products: 1, _id: 0 })
+        .findOne({ userId: req.user._id }, { products: 1, _id: 1 })
         .populate("products.productId");
 
     if (!userCart) {
@@ -136,8 +136,8 @@ const createOrder = async (req, res) => {
         orderStatus: req.body.paymentMode === "ONLINE" ? "PAYMENT_PENDING" : "IN_TRANSIT",
         deliveryAddress: req.user.address
     });
-
-    await CartModel.deleteOne({_id: userCart._id});
+    
+    await CartModel.findByIdAndDelete(userCart._id);
 
     res.json({
         success: true,
