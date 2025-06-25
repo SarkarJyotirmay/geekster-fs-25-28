@@ -703,3 +703,38 @@ Forgot password => 2 step process
 
 1. Enter email and receive OTP (/forgot-password)
 2. Validate OTP and change password (otp, newpassword) => /reset-password
+
+--------------------------------------------------------------------------------------------
+25-06-2025
+
+DOS (Denail Of Service)
+Rate Limit : 1 min, 5 requests per system / per IP
+CORS(Cross Origin Resource Sharing)
+Frontend/ UI : http://localhost:3000
+Backend      : http://localhost:10000
+
+oAuth :   Frontend -> redirect the user to login window -> user login -> google/fb etc will give a token to frontend -> fe wil send the token to our backend -> passport middleware will authneticate the token with google/fb etc
+
+MFA : Micro Frontend Arch
+
+Product module => Product UI (Product desc page, product card) => npm install product-module
+User module => 
+
+Microservices =>
+
+eComm :
+
+User => user.render.com
+Product => product-apis.render.com
+Cart => cart-apis.render.com
+
+API Gateway => apis.render.com/api/v1/product
+
+LB (Load Balancer) : 
+100 req per system for API
+
+10 req per server
+
+Scaling : Increasing no of servers when required
+1 server IRCTC -> Day
+Tatlak 10 Server

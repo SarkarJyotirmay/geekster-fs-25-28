@@ -1,6 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cors = require("cors");
+const { rateLimit } = require("express-rate-limit");
 
 
 const authMiddleware = require("./middlewares/auth");
@@ -14,12 +16,21 @@ const app = express();
 
 dotenv.config();
 
+const limit = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    limit: 5,
+    message: {
+        message: "API Limit exceeded",
+        success: false
+    }
+});
+
 // Middlewares
 app.use(express.json());
-
-//// IGNORE BELOW BLOCK
-const cors = require("cors");
-app.use(cors());
+app.use(limit);
+app.use(cors({
+    origin: "http://127.0.0.1:5501"
+}));
 
 // DB Connection
 mongoose
